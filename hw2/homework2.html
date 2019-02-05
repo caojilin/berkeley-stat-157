@@ -13123,7 +13123,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[12]:</div>
+<div class="prompt input_prompt">In&nbsp;[3]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="kn">from</span> <span class="nn">mxnet</span> <span class="k">import</span> <span class="n">nd</span><span class="p">,</span> <span class="n">autograd</span><span class="p">,</span> <span class="n">gluon</span>
@@ -13494,7 +13494,7 @@ $$-\log\left(\frac{e^x}{e^x+e^y}\right)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[13]:</div>
+<div class="prompt input_prompt">In&nbsp;[4]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">log_exp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
@@ -13517,7 +13517,7 @@ $$-\log\left(\frac{e^x}{e^x+e^y}\right)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[14]:</div>
+<div class="prompt input_prompt">In&nbsp;[5]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">2</span><span class="p">]),</span> <span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">3</span><span class="p">])</span>
@@ -13535,7 +13535,7 @@ $$-\log\left(\frac{e^x}{e^x+e^y}\right)$$</p>
 
 <div class="output_area">
 
-    <div class="prompt output_prompt">Out[14]:</div>
+    <div class="prompt output_prompt">Out[5]:</div>
 
 
 
@@ -13562,7 +13562,7 @@ $$-\log\left(\frac{e^x}{e^x+e^y}\right)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[19]:</div>
+<div class="prompt input_prompt">In&nbsp;[6]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">grad</span><span class="p">(</span><span class="n">forward_func</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span> 
@@ -13570,7 +13570,7 @@ $$-\log\left(\frac{e^x}{e^x+e^y}\right)$$</p>
     <span class="n">x</span><span class="o">.</span><span class="n">attach_grad</span><span class="p">()</span>
     <span class="n">y</span><span class="o">.</span><span class="n">attach_grad</span><span class="p">()</span>
     <span class="k">with</span> <span class="n">autograd</span><span class="o">.</span><span class="n">record</span><span class="p">():</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
+        <span class="n">z</span> <span class="o">=</span> <span class="n">forward_func</span><span class="p">(</span><span class="n">x</span><span class="p">,</span><span class="n">y</span><span class="p">)</span>
     <span class="n">z</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x.grad =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y.grad =&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
@@ -13591,7 +13591,7 @@ $$-\log\left(\frac{e^x}{e^x+e^y}\right)$$</p>
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[20]:</div>
+<div class="prompt input_prompt">In&nbsp;[7]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">grad</span><span class="p">(</span><span class="n">log_exp</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -13612,10 +13612,10 @@ $$-\log\left(\frac{e^x}{e^x+e^y}\right)$$</p>
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>x.grad = 
-[-0.73105854]
+[-0.7310586]
 &lt;NDArray 1 @cpu(0)&gt;
 y.grad = 
-[0.73105854]
+[0.7310586]
 &lt;NDArray 1 @cpu(0)&gt;
 </pre>
 </div>
@@ -13635,7 +13635,7 @@ y.grad =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[21]:</div>
+<div class="prompt input_prompt">In&nbsp;[8]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">50</span><span class="p">]),</span> <span class="n">nd</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">100</span><span class="p">])</span>
@@ -13657,10 +13657,10 @@ y.grad =
 
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>x.grad = 
-[-0.9999999]
+[nan]
 &lt;NDArray 1 @cpu(0)&gt;
 y.grad = 
-[0.9999999]
+[nan]
 &lt;NDArray 1 @cpu(0)&gt;
 </pre>
 </div>
@@ -13680,20 +13680,11 @@ y.grad =
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[22]:</div>
+<div class="prompt input_prompt">In&nbsp;[9]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython3"><pre><span></span><span class="k">def</span> <span class="nf">stable_log_exp</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
-    <span class="n">x</span><span class="o">.</span><span class="n">attach_grad</span><span class="p">()</span>
-    <span class="n">y</span><span class="o">.</span><span class="n">attach_grad</span><span class="p">()</span>
-    <span class="c1">#x = x.asnumpy()</span>
-    <span class="c1">#y = y.asnumpy()</span>
-    <span class="k">with</span> <span class="n">autograd</span><span class="o">.</span><span class="n">record</span><span class="p">():</span>
-        <span class="n">z</span> <span class="o">=</span> <span class="o">-</span><span class="p">(</span><span class="n">x</span><span class="o">-</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="n">x</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="n">y</span><span class="p">)))</span>
-    <span class="n">z</span><span class="o">.</span><span class="n">backward</span><span class="p">()</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;x.grad =&#39;</span><span class="p">,</span> <span class="n">x</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;y.grad =&#39;</span><span class="p">,</span> <span class="n">y</span><span class="o">.</span><span class="n">grad</span><span class="p">)</span>
-
+    <span class="k">return</span> <span class="n">nd</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="mi">1</span><span class="o">+</span><span class="n">np</span><span class="o">.</span><span class="n">e</span><span class="o">**</span><span class="p">(</span><span class="n">y</span><span class="o">-</span><span class="n">x</span><span class="p">))</span>
 <span class="n">grad</span><span class="p">(</span><span class="n">stable_log_exp</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
 </pre></div>
 
